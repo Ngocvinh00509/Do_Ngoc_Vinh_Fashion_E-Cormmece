@@ -238,17 +238,17 @@
   border: 1px solid red;
   max-width: 500px; /* Giới hạn chiều rộng tối đa (có thể điều chỉnh) */
   height: 40px; /* Chiều cao giống nhau cho cả hai input */
-  padding: 0 10px; /* Khoảng cách bên trong */
-  border: 2px solid red; /* Viền input */
-  border-radius: 5px; /* Bo góc */
-  background-color: #f0f0f0; /* Màu nền */
-  font-size: 16px; /* Kích thước chữ */
+  padding: 0 10px; 
+  border: 2px solid red; 
+  border-radius: 5px; 
+  background-color: #f0f0f0; 
+  font-size: 16px; 
   box-sizing: border-box; /
 }
 
 .error-message {
-  max-width: 100%;           /* không vượt quá wrapper */
-  word-wrap: break-word;     /* xuống dòng khi quá dài */
+  max-width: 100%;         
+  word-wrap: break-word;    
   color: red;
   font-size: 0.85rem;
   margin-top: 0.25rem;

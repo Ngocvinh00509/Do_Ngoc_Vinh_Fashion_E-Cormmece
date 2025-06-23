@@ -353,9 +353,8 @@ section__title {
   border-radius: 1.25rem;
 }
 .category__img {
-  width: 100%;              /* Chiếm toàn bộ chiều ngang container */
-  height: 250px;            /* Đặt chiều cao cố định (có thể thay đổi theo nhu cầu) */
-  object-fit: cover;        /* Giữ tỷ lệ ảnh và cắt phần dư */
+          
+  object-fit: cover;        
   border-radius: 0.75rem;
   margin-bottom: 1.25rem;
   display: block;
@@ -682,7 +681,7 @@ section__title {
   margin-bottom: 1.5rem;
 }
 .showcase__img {
-  width: 70px;              /* hoặc giá trị bạn muốn */
+  width: 70px;     
   height: 70px;
   object-fit: cover;
   display: block;
