@@ -353,7 +353,8 @@ section__title {
   border-radius: 1.25rem;
 }
 .category__img {
-          
+  width: 100%;              
+  height: 250px;   
   object-fit: cover;        
   border-radius: 0.75rem;
   margin-bottom: 1.25rem;
