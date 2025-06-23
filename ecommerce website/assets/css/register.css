@@ -239,7 +239,7 @@
   max-width: 500px; /* Giới hạn chiều rộng tối đa (có thể điều chỉnh) */
   height: 40px; /* Chiều cao giống nhau cho cả hai input */
   padding: 0 10px; /* Khoảng cách bên trong */
-  border: 1px solid #ccc; /* Viền input */
+  border: 2px solid red; /* Viền input */
   border-radius: 5px; /* Bo góc */
   background-color: #f0f0f0; /* Màu nền */
   font-size: 16px; /* Kích thước chữ */
@@ -250,7 +250,6 @@
   max-width: 100%;           /* không vượt quá wrapper */
   word-wrap: break-word;     /* xuống dòng khi quá dài */
   color: red;
-  padding: 20px;
   font-size: 0.85rem;
   margin-top: 0.25rem;
   text-align: left;
@@ -259,6 +258,7 @@
 
 .form__input.error + .error-message {
   display: block;
+  color: red;
 }
 
 
