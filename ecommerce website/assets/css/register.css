@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+.login-register {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-register h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-register p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.login-register span {
+  font-size: 12px;
+}
+
+.login-register button {
+  border-radius: 20px;
+  border: 1px solid hsl(176, 88%, 27%);
+  background-color: hsl(176, 88%, 27%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+.login-register button:active {
+  transform: scale(0.95);
+}
+
+.login-register button:focus {
+  outline: none;
+}
+
+.login-register button.ghost {
+  background-color: transparent;
+  border-color: 	#080808;
+  color: 	#080808;
+}
+
+.login-register input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 70%;
+}
+
+.login-register form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.login-register .container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  position: relative;
+  overflow: hidden;
+  width: 600px;         /* giảm chiều rộng */
+  max-width: 90%;
+  min-height: 480px;
+}
+.forgot-password {
+  display: inline-block;
+  margin-bottom: 12px; /* Khoảng cách giữa link và nút */
+  font-size: 14px;
+  color: #2E8B57;
+  text-decoration: none;
+}
+/* Form containers */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Overlay */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay {
+  background: linear-gradient(to right, hsl(176, 88%, 27%), #90EE90);
+  color: #222;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Animation khi chuyển panel */
+.login-register.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.login-register.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+.login-register.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.login-register.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.login-register.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.login-register.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* Social buttons */
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #ddd;
+  color: #008000;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+.input-wrapper {
+  width: 100%;           /* chiếm hết chiều ngang form */
+  max-width: 450px;      /* điều chỉnh cho cân đối với layout */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;  /* ép input và error-message đều stretch hết wrapper */
+  margin-bottom: 1rem;
+}
+.input-wrapper .form__input {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.input-wrapper .form__input.error {
+  width: 100% !important;
+  /* không cần lại khai báo max-width nếu đã khai báo ở trên */
+}
+
+.form__input.error {
+  border: 1px solid red;
+  max-width: 500px; /* Giới hạn chiều rộng tối đa (có thể điều chỉnh) */
+  height: 40px; /* Chiều cao giống nhau cho cả hai input */
+  padding: 0 10px; /* Khoảng cách bên trong */
+  border: 1px solid #ccc; /* Viền input */
+  border-radius: 5px; /* Bo góc */
+  background-color: #f0f0f0; /* Màu nền */
+  font-size: 16px; /* Kích thước chữ */
+  box-sizing: border-box; /
+}
+
+.error-message {
+  max-width: 100%;           /* không vượt quá wrapper */
+  word-wrap: break-word;     /* xuống dòng khi quá dài */
+  color: red;
+  padding: 20px;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  text-align: left;
+
+}
+
+.form__input.error + .error-message {
+  display: block;
+}
+
+
+
