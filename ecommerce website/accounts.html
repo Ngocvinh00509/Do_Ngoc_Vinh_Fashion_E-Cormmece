@@ -100,12 +100,10 @@
           <p class="account__tab active-tab" data-target="#dashboard">
             <i class="fas fa-tachometer-alt"></i> Dashboard
           </p>
-
           <!-- Orders -->
           <p class="account__tab" data-target="#orders">
             <i class="fas fa-shopping-bag"></i> Orders
           </p>
-
           <!-- Update Profile -->
           <p class="account__tab" data-target="#update-profile">
             <i class="fas fa-user"></i> Update Profile
@@ -114,17 +112,14 @@
           <p class="account__tab" data-target="#address">
             <i class="fas fa-map-marker-alt"></i> My Address
           </p>
-
           <!-- Change Password -->
           <p class="account__tab" data-target="#change-password">
             <i class="fas fa-key"></i> Change Password
           </p>
-
           <!-- Logout -->
           <p class="account__tab">
             <i class="fas fa-sign-out-alt"></i> Logout
           </p>
-
         </div>
         <div class="tabs__content">
           <div class="tab__content active-tab" content id="dashboard">
@@ -169,61 +164,62 @@
               </table>
             </div>
           </div>
-          <div class="tab__content" content id="update-profile">
-            <h3 class="tab__header">Update Profile</h3>
-            <div class="tab__body">
-              <form action="" class="form grid">
+<div class="tab__content" id="update-profile">
+  <h3 class="tab__header">Profile Information</h3>
 
-                <!-- Full Name -->
-                <input type="text" placeholder="Full Name" class="form__input" id="fullname">
-                <small class="error-message"></small>
+  <!-- VIEW PROFILE (mặc định hiển thị) -->
+  <div id="profile-view">
+    <ul class="profile__info">
+      <li><strong>Full Name:</strong> <span id="display-fullname">Anna Le</span></li>
+      <li><strong>Username:</strong> <span id="display-username">anna123</span></li>
+      <li><strong>Gender:</strong> <span id="display-gender">Female</span></li>
+      <li><strong>Date of Birth:</strong> <span id="display-dob">1990-01-01</span></li>
+      <li><strong>Favorite Style:</strong> <span id="display-style">Elegant</span></li>
+      <li><strong>Interested Products:</strong> <span id="display-products">Blazer, Dress</span></li>
+    </ul>
+    <div class="form__btn">
+      <button class="btn btn--md" onclick="toggleEdit()">Edit</button>
+    </div>
+  </div>
 
-                <!-- Gender -->
-                <div class="form__group" id="gender-group">
-                  <label>Gender:</label><br>
-                  <label><input type="radio" name="gender" value="male"> Male</label>
-                  <label><input type="radio" name="gender" value="female"> Female</label>
-                  <label><input type="radio" name="gender" value="other"> Other</label>
-                  <small class="error-message"></small>
-                </div>
+  <!-- EDIT FORM (ẩn lúc đầu) -->
+  <div id="profile-edit" style="display: none;">
+    <form class="form grid" onsubmit="saveProfile(event)">
+      <input type="text" placeholder="Full Name" class="form__input" id="fullname">
+      <input type="text" placeholder="Username" class="form__input" id="username">
+      <div class="form__group">
+        <label>Gender:</label><br>
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+      <div class="form__group">
+        <label>Date of Birth:</label><br>
+        <input type="date" class="form__input" id="dob">
+      </div>
+      <div class="form__group">
+        <label>Favorite Style:</label><br>
+        <label><input type="radio" name="style" value="Cute"> Cute</label>
+        <label><input type="radio" name="style" value="Elegant"> Elegant</label>
+        <label><input type="radio" name="style" value="Luxurious"> Luxurious</label>
+        <label><input type="radio" name="style" value="Attractive"> Attractive</label>
+      </div>
+      <div class="form__group">
+        <label>Interested Products:</label><br>
+        <label><input type="checkbox" name="product" value="Blazer"> Blazer</label>
+        <label><input type="checkbox" name="product" value="Dress"> Dress</label>
+        <label><input type="checkbox" name="product" value="Blouse"> Blouse</label>
+        <label><input type="checkbox" name="product" value="Pants"> Pants</label>
+        <label><input type="checkbox" name="product" value="Skirt"> Skirt</label>
+        <label><input type="checkbox" name="product" value="T-shirt"> T-shirt</label>
+      </div>
+      <div class="form__btn">
+        <button class="btn btn--md" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
 
-                <!-- Date of Birth -->
-                 <div class="form__group" id="gender-group">
-                <label>Date of Birth:</label><br>
-                <input type="date" class="form__input" id="dob">
-                <small class="error-message"></small>
-                </div>
-
-                <!-- Favorite Style -->
-                <div class="form__group" id="style-group">
-                  <label>What is your favorite style?</label><br>
-                  <label><input type="radio" name="style" value="Cute"> Cute</label>
-                  <label><input type="radio" name="style" value="Elegant"> Elegant</label>
-                  <label><input type="radio" name="style" value="Luxurious"> Luxurious</label>
-                  <label><input type="radio" name="style" value="Attractive"> Attractive</label>
-                  <small class="error-message"></small>
-                </div>
-
-                <!-- Interested Products -->
-                <div class="form__group" id="product-group">
-                  <label>Which products are you interested in?</label><br>
-                  <label><input type="checkbox" name="product" value="Blazer"> Blazer</label>
-                  <label><input type="checkbox" name="product" value="Dress"> Dress</label>
-                  <label><input type="checkbox" name="product" value="Blouse"> Blouse</label>
-                  <label><input type="checkbox" name="product" value="Pants"> Pants</label>
-                  <label><input type="checkbox" name="product" value="Skirt"> Skirt</label>
-                  <label><input type="checkbox" name="product" value="T-shirt"> T-shirt</label>
-                  <small class="error-message"></small>
-                </div>
-                <!-- Username -->
-                <input type="text" placeholder="Username" class="form__input" id="username">
-                <small class="error-message"></small>
-                <div class="form__btn">
-                  <button class="btn btn--md">Save</button>
-                </div>
-              </form>
-            </div>
-          </div>
           <div class="tab__content" content id="address">
             <h3 class="tab__header">Shipping Address</h3>
             <div class="tab__body">
@@ -343,6 +339,95 @@
   <!--=============== MAIN JS ===============-->
   
   <script src="assets/js/main.js"></script>
+<script>
+function toggleEdit() {
+  // Hiện form, ẩn phần xem
+  document.getElementById("profile-view").style.display = "none";
+  document.getElementById("profile-edit").style.display = "block";
+
+  // Đổ dữ liệu từ span -> form
+  document.getElementById("fullname").value = document.getElementById("display-fullname").innerText;
+  document.getElementById("dob").value = document.getElementById("display-dob").innerText;
+
+  let gender = document.getElementById("display-gender").innerText;
+  document.querySelectorAll('input[name="gender"]').forEach(input => {
+    input.checked = input.value === gender;
+  });
+
+  let style = document.getElementById("display-style").innerText;
+  document.querySelectorAll('input[name="style"]').forEach(input => {
+    input.checked = input.value === style;
+  });
+
+  let products = document.getElementById("display-products").innerText.split(", ");
+  document.querySelectorAll('input[name="product"]').forEach(checkbox => {
+    checkbox.checked = products.includes(checkbox.value);
+  });
+
+  document.getElementById("username").value = document.getElementById("display-username").innerText;
+}
+
+function saveProfile(event) {
+  event.preventDefault();
+
+  document.getElementById("display-fullname").innerText = document.getElementById("fullname").value;
+  document.getElementById("display-dob").innerText = document.getElementById("dob").value;
+  document.getElementById("display-username").innerText = document.getElementById("username").value;
+
+  let gender = document.querySelector('input[name="gender"]:checked');
+  document.getElementById("display-gender").innerText = gender ? gender.value : "";
+
+  let style = document.querySelector('input[name="style"]:checked');
+  document.getElementById("display-style").innerText = style ? style.value : "";
+
+  let selectedProducts = Array.from(document.querySelectorAll('input[name="product"]:checked')).map(cb => cb.value);
+  document.getElementById("display-products").innerText = selectedProducts.join(", ");
+
+  // Ẩn form, hiện lại phần xem
+  document.getElementById("profile-view").style.display = "block";
+  document.getElementById("profile-edit").style.display = "none";
+}
+
+// --- NEW: Tab switching logic ---
+document.querySelectorAll(".tab-button").forEach(button => {
+  button.addEventListener("click", () => {
+    // Ẩn mọi tab content
+    document.querySelectorAll(".tab-content").forEach(tab => {
+      tab.classList.remove("active-tab");
+    });
+
+    // Bỏ form nếu đang mở
+    document.getElementById("profile-edit").style.display = "none";
+    document.getElementById("profile-view").style.display = "block";
+
+    // Hiện tab tương ứng
+    const tabTarget = button.getAttribute("data-target");
+    document.getElementById(tabTarget).classList.add("active-tab");
+
+    // Cập nhật trạng thái active của tab
+    document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+  });
+});
+document.querySelectorAll('.account__tab[data-target]').forEach(tab => {
+  tab.addEventListener('click', function() {
+    // Ẩn tất cả tab content
+    document.querySelectorAll('.tab__content').forEach(content => {
+      content.classList.remove('active-tab');
+    });
+    // Loại bỏ active ở tất cả tab
+    document.querySelectorAll('.account__tab').forEach(t => t.classList.remove('active-tab'));
+    // Hiện tab content được chọn
+    const target = this.getAttribute('data-target');
+    if (target) {
+      document.querySelector(target).classList.add('active-tab');
+      this.classList.add('active-tab');
+    }
+  });
+});
+</script>
+
+
   
 </body>
 

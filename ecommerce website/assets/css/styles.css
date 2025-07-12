@@ -279,6 +279,13 @@ section__title {
   grid-template-columns: 5fr 7fr;
   align-items: center;
 }
+
+.home__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--weight-700);
+  line-header: 1.4;
+}
+
 .home__subtitle,
 .home__description {
   font-size: var(--large-font-size);
@@ -289,11 +296,7 @@ section__title {
   margin-bottom: 1rem;
   display: block;
 }
-.home__title {
-  font-size: var(--h1-font-size);
-  font-weight: var(--weight-700);
-  line-header: 1.4;
-}
+
 .home__title span {
   color: var(--first-color);
   font-size: var(--big-font-size);
@@ -1216,37 +1219,32 @@ section__title {
 .contact__container {
   grid-template-columns: repeat(2, 1fr);
 }
-
 #page-header {
   background-image: url('../img/banner.jpg');
-  background-repeat: no-repeat;               /* không lặp lại ảnh nền */
-  background-size: cover;                     /* giúp ảnh phủ kín vùng chứa */
-  background-position: center;                /* căn giữa ảnh */
+  background-repeat: no-repeat;               
+  background-size: cover;                     
+  background-position: center;                
   padding: 80px 0;
   text-align: center;
   color: white;
 }
-
 #contact-details {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 #contact-details .details {
   width: 40%;
   min-height: 400px;
-  background-color: #e3f2fd; /* màu bạn đang dùng */
+  background-color: #e3f2fd; 
   padding: 20px;
   box-sizing: border-box;
 }
-
 #contact-details .details span,
 #form-details form span
  {
   font-size: 12px;
 }
-
 #contact-details .details h2,
 #form-details form h2,
 #page-header .section__title 
@@ -1256,7 +1254,6 @@ section__title {
   line-height: 35px;
   padding: 20px 0;
 }
-
 #contact-details .details h3 {
   font-size: 16px;
   padding-bottom: 15px;
@@ -1492,6 +1489,48 @@ section__title {
 .edit {
   font-size: var(--small-font-size);
 }
+
+.profile__info {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.profile__info li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.profile__info li:last-child {
+  border-bottom: none;
+}
+
+.profile__info strong {
+  color: #555;
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.profile__info span {
+  text-align: right;
+  color: #111;
+  font-weight: 500;
+}
+
+.form__btn {
+  text-align: right;
+  margin-top: 20px;
+}
+
+
 
 
 
@@ -2394,19 +2433,19 @@ section__title {
     0%;
   }
   #contact-details {
-    flex-direction: column;           /* Xếp dọc thay vì ngang */
-    gap: 2rem;                        /* Khoảng cách giữa .details và .map */
-    padding: 1.25rem;                 /* Giảm padding */
+    flex-direction: column;           
+    gap: 2rem;                        
+    padding: 1.25rem;                 
   }
 
   #contact-details .details,
   #contact-details .map {
-    width: 100%;                     /* Chiếm toàn bộ chiều ngang */
-    min-height: auto;                /* Để map tự co theo tỷ lệ */
+    width: 100%;                     
+    min-height: auto;               
   }
 
   #contact-details .map iframe {
-    height: 300px;                   /* Giảm chiều cao bản đồ */
+    height: 300px;                   
     border-radius: 6px;
   }
 

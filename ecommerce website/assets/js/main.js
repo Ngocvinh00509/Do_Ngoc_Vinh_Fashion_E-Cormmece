@@ -114,7 +114,6 @@ function validateForm(form, rules) {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('container');
 
@@ -177,9 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (signupForm) {
     signupForm.addEventListener('submit', e => {
       e.preventDefault();
-
       const email = signupForm.elements['signup-email'].value.trim();
-
       const rules = [
         {
           field: 'signup-name',
@@ -324,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 document.addEventListener("DOMContentLoaded", function () {
-  const placeOrderBtn = document.querySelector(".btn.btn--md"); // Nút "Place Order"
+  const placeOrderBtn = document.querySelector(".btn.btn--md"); 
   const form = document.getElementById("billing-form");
   const fields = [
     { id: "name", message: "Please enter your name" },
